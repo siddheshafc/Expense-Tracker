@@ -27,8 +27,6 @@ const Home = () => {
     }
   }, [dispatch, user])
 
-  
-
   return (
     <>
     <h2>Keep track of your expenses on your fingertips by using SaveBucks</h2>

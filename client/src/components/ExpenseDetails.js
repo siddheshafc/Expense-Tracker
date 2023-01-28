@@ -1,10 +1,11 @@
 import { useExpensesContext } from '../hooks/useExpensesContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+import {BiShoppingBag, BiRupee, BiCategory} from 'react-icons/bi'
 
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-const ExpenseDetails = ({ expense }) => {
+const ExpenseDetails = ({ expense, }) => {
   const { dispatch } = useExpensesContext()
   const { user } = useAuthContext()
 
@@ -26,15 +27,13 @@ const ExpenseDetails = ({ expense }) => {
     }
   }
   return (
-    
     <div className="expense-details">
-      <h4>{expense.title}</h4>
-      <p><strong>Cost: </strong>{expense.cost}</p>
-      <p><strong>Category: </strong>{expense.category}</p>
+      <h4><BiShoppingBag />{expense.title}</h4>
+      <p><strong><BiRupee />Cost: </strong>{expense.cost}</p>
+      <p><strong><BiCategory /> Category: </strong>{expense.category}</p>
       <p>{formatDistanceToNow(new Date(expense.createdAt), { addSuffix: true })}</p>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>
-      
   )
 }
 

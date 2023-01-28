@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useExpensesContext } from "../hooks/useExpensesContext"
 import { useAuthContext } from '../hooks/useAuthContext'
+import {BiShoppingBag, BiRupee, BiCategory} from 'react-icons/bi'
 
 const ExpenseForm = () => {
   const { dispatch } = useExpensesContext()
@@ -50,7 +51,8 @@ const ExpenseForm = () => {
     <form className="create" onSubmit={handleSubmit}>
       <h3>Add an new expense</h3>
 
-      <label>Expense Title:</label>
+      
+      <label><BiShoppingBag size={18} /> Expense Title:</label>
       <input 
         type="text"
         onChange={(e) => setTitle(e.target.value)}
@@ -59,7 +61,7 @@ const ExpenseForm = () => {
         placeholder="Pizza, Clothes, Electric Bill..."
       />
 
-      <label>Cost:</label>
+      <label><BiRupee size={18}/>Cost:</label>
       <input 
         type="number"
         onChange={(e) => setCost(e.target.value)}
@@ -68,7 +70,7 @@ const ExpenseForm = () => {
         placeholder="₹100, ₹500...."
       />
 
-      <label>Category:</label>
+      <label><BiCategory size={18} /> Category:</label>
       <input 
         type="text"
         onChange={(e) => setCategory(e.target.value)}
