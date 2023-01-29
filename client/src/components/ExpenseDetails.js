@@ -14,7 +14,7 @@ const ExpenseDetails = ({ expense, }) => {
       return
     }
 
-    const response = await fetch('/api/expenses/' + expense._id, {
+    const response = await fetch(`${process.env.BASE_URL}/api/expenses/` + expense._id, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

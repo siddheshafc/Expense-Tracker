@@ -23,7 +23,7 @@ const ExpenseForm = () => {
 
     const expense = {title, cost, category}
 
-    const response = await fetch('/api/expenses', {
+    const response = await fetch(`${process.env.BASE_URL}/api/expenses`, {
       method: 'POST',
       body: JSON.stringify(expense),
       headers: {
