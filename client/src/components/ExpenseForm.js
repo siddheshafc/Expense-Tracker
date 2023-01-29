@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useExpensesContext } from "../hooks/useExpensesContext"
 import { useAuthContext } from '../hooks/useAuthContext'
 import {BiShoppingBag, BiRupee, BiCategory} from 'react-icons/bi'
+import {BASE_URL} from "../helper"
 
 const ExpenseForm = () => {
   const { dispatch } = useExpensesContext()
@@ -23,7 +24,7 @@ const ExpenseForm = () => {
 
     const expense = {title, cost, category}
 
-    const response = await fetch(`${process.env.BASE_URL}/api/expenses`, {
+    const response = await fetch(`${BASE_URL}/api/expenses`, {
       method: 'POST',
       body: JSON.stringify(expense),
       headers: {
