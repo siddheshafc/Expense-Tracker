@@ -1,4 +1,4 @@
-import { useEffect }from 'react'
+import { useEffect } from 'react'
 import { useExpensesContext } from "../hooks/useExpensesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchExpenses = async () => {
-      const response = await fetch('/api/expenses', {
+      const response = await fetch(`${process.env.BASE_URL}/api/expenses`, {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()
